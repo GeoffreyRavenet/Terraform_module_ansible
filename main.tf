@@ -113,11 +113,3 @@ resource "aws_security_group" "ec2_security_group_ansible_exo" {
     }
 }
 
-
-###############################################################
-#                   STOCKAGE DE MES VARIABLE                  #
-###############################################################
-
-output "ip_address_i2" {
-    value = aws_instance.ec2_myinstance_${var.NAME}.public_ip
-}
