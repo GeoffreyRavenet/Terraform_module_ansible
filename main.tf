@@ -98,7 +98,7 @@ resource "aws_instance" "ec2_ansible_exo" {
 
 
 resource "aws_security_group" "ec2_security_group_ansible_exo" {
-    name = "ec2_security_group_ansible_exo"
+    name = "ec2_security_group_ansible_exo_${var.NAME}"
     egress {
         protocol    = "-1"
         from_port   = 0
