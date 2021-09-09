@@ -49,7 +49,7 @@ resource "aws_instance" "ec2_myinstance_gr"{
         host        = self.public_ip
     }
     provisioner "remote-exec" {
-        scripts = ["scripts/script-init-intance2.sh"]
+        scripts = ["${path.module}/scripts/script-init-intance2.sh"]
     } 
 }
 
@@ -72,7 +72,7 @@ resource "aws_instance" "ec2_ansible_exo" {
 
     #un provisioner qui permet d'executer des scripts ou des commandes en ssh
     provisioner "remote-exec" {
-        scripts = ["scripts/script-install-i1.sh"]
+        scripts = ["${path.module}/scripts/script-install-i1.sh"]
     }   
     # provisioner "remote-exec" {
     #     inline = ["echo ${tls_private_key.ssh_key["link-i1-to-i2"].private_key_pem} >> /home/ubuntu/.ssh/authorized_keys"]
